@@ -3,7 +3,5 @@ class HomeController < ApplicationController
     @article = Article.first
   end
 
-  def about
-  end
-
+  def about; end
 end
