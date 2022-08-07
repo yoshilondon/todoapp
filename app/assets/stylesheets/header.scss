@@ -13,8 +13,18 @@ $header-padding-y: 16px;
   &_pageTitle {
     color: black;
     line-height: $avatar-size;
+    font-family: Avenir;
     font-size: $font-lg;
   }
+
+  // &_loginBtn {
+  //   background-color: rgb(191, 243, 243);
+  //   height: $avatar-size;
+  //   border-radius: 8px;
+  //   font-size: 12px;
+  //   padding: 12px 16px;
+  //   color: $primary-color;
+  // }
 
   &_avatar {
     width: $avatar-size;
