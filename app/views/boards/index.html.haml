@@ -1,0 +1,14 @@
+.container
+  %h1.title All Boards
+  - @boards.each do |board|
+    .card
+      %h2 Brackets
+      .card_content
+        .card_title
+          = board.title
+      .dropdown-content-boards 
+        %a{:href => "#"} Edit 
+        %a{:href => "#"} Delete 
+    .add_card 
+      %p + Add new board
+

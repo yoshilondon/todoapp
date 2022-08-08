@@ -1,6 +1,6 @@
-class CreateArticles < ActiveRecord::Migration[6.0]
+class CreateBoards < ActiveRecord::Migration[6.0]
   def change
-    create_table :articles do |t|
+    create_table :boards do |t|
       t.string :title
       t.text :content
       t.timestamps
