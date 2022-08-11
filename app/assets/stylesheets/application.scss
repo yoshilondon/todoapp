@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'buttons';
 @import 'form';
+@import 'card';
 
 html {
   word-spacing: 1px;
@@ -32,6 +33,12 @@ body {
   width: 100%;
 }
 
+h1.title {
+  font-family: Avenir;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
 h2 {
   font-family: Avenir;
   font-style: normal;
@@ -39,6 +46,16 @@ h2 {
   font-size: 26px;
   line-height: 36px;
   }
+
+  h2.title {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+    padding-top: 32px;
+    padding-left: 17px;
+    }
 
 //  .float_btn {
 //   position: fixed;
