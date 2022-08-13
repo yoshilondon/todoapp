@@ -6,10 +6,12 @@
         %h2.title Brackets
         .card_content
           .card_title
-            = board.title
+            = board.name
         .dropdown-content-boards 
           %a{:href => "#"} Edit 
           %a{:href => "#"} Delete 
-    .add_card 
+  .add_card 
+    = link_to new_board_path do
       %p + Add new board
+      
 
