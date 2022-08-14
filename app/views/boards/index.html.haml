@@ -1,15 +1,18 @@
 .container
   %h1.title All Boards
   - @boards.each do |board|
-    .card
-      .container_bracket
-        %h2.title Brackets
-        .card_content
-          .card_title
-            = board.title
-        .dropdown-content-boards 
-          %a{:href => "#"} Edit 
-          %a{:href => "#"} Delete 
-    .add_card 
+    = link_to board_path(board) do
+      .card
+        .container_bracket
+          %h2.title Brackets
+          .card_content
+            .card_title
+              = board.name
+          .dropdown-content-boards 
+            %a{:href => "#"} Edit 
+            %a{:href => "#"} Delete 
+  .add_card 
+    = link_to new_board_path do
       %p + Add new board
+      
 

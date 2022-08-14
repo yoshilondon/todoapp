@@ -6,4 +6,19 @@
   left: 14px;
   border-radius: 10px;
   background-color: #F4F4F4;
+  margin-top: 10px;
+}
+
+.add_card {
+  font-family: avenir;
+  font-size: 18px;
+  padding: 60px 90px;
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-top: 10px;
+}
+
+.add_card p {
+  text-align: center;
 }
