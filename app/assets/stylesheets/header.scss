@@ -17,14 +17,15 @@ $header-padding-y: 16px;
     font-size: $font-lg;
   }
 
-  // &_loginBtn {
-  //   background-color: rgb(191, 243, 243);
-  //   height: $avatar-size;
-  //   border-radius: 8px;
-  //   font-size: 12px;
-  //   padding: 12px 16px;
-  //   color: $primary-color;
-  // }
+  &_loginBtn {
+    background-color: rgb(191, 243, 243);
+    height: $avatar-size;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 12px 16px;
+    color: black;
+    font-family: Avenir;
+  }
 
   &_avatar {
     width: $avatar-size;
