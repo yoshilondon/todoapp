@@ -3,16 +3,22 @@
   - @boards.each do |board|
     = link_to board_path(board) do
       .card
-        .container_bracket
-          %h2.title Brackets
-          .card_content
-            .card_title
-              = board.name
-          .dropdown-content-boards 
-            %a{:href => "#"} Edit 
-            %a{:href => "#"} Delete 
-  .add_card 
-    = link_to new_board_path do
-      %p + Add new board
+        .card_detail
+          %h2.card_title
+            = board.name
+          .card_detail_actions       
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropbtn'
+              .dropdown-content.mini
+                = link_to '編集する', edit_board_path(board)
+          -# .dropdown-content-boards 
+          -#   %a{:href => "#"} Edit 
+          -#   %a{:href => "#"} Delete 
+        .card_content 
+          = board.description        
+          
+  = link_to new_board_path do
+    .float_btn
+      %i.fa.fa-plus Add new board
       
 

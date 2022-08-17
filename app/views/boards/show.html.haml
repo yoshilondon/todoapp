@@ -1,7 +1,6 @@
 .container
-  %h1.title New Board
+  %h2.board_name= @board.name
   .board
-    %h2.board_name= @board.name
     .board_content
-      = @board.description
+    = @board.description
 

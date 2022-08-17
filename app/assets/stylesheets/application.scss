@@ -4,6 +4,7 @@
 @import 'form';
 @import 'card';
 @import 'flash';
+@import 'common';
 
 html {
   word-spacing: 1px;
@@ -51,27 +52,27 @@ h2 {
   font-weight: 800;
   font-size: 26px;
   line-height: 36px;
+}
+
+h2.title {
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 36px;
+  padding-top: 32px;
+  padding-left: 17px;
+}
+
+.float_btn {
+  height: 150px;
+  text-align: center;
+  background-color: #ffffff;
+  color: $text-base-color;
+  border: dashed 1px $text-base-color;
+  border-radius: 10px;
+
+  i {
+    margin-top: 65px;
   }
-
-  h2.title {
-    font-family: Avenir;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 26px;
-    line-height: 36px;
-    padding-top: 32px;
-    padding-left: 17px;
-    }
-
-//  .float_btn {
-//   position: fixed;
-//   bottom: 16px;
-//   right: 16px;
-//   width: 64px;
-//   height: 64px;
-//   border-radius: 100%;
-//   text-align: center;
-// //   background-color: $primary-color;
-//   color: white;
-//   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-//   }
+}
