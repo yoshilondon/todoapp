@@ -14,7 +14,7 @@ $avatar-size: 32px;
     font-size: 22px;
   }
 
-  &_detail {
+  &_content {
     padding-top: 10px;
     display: flex;
     font-size: 12px;
@@ -34,7 +34,7 @@ $avatar-size: 32px;
     }
   }
 
-  &_content {
+  &_description {
     padding: 24px 0 32px;
   }
 }

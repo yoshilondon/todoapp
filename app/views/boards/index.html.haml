@@ -3,10 +3,10 @@
   - @boards.each do |board|
     = link_to board_path(board) do
       .card
-        .card_detail
+        .card_content
           %h2.card_title
             = board.name
-          .card_detail_actions       
+          .card_content_actions       
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'
               .dropdown-content.mini
@@ -14,8 +14,11 @@
           -# .dropdown-content-boards 
           -#   %a{:href => "#"} Edit 
           -#   %a{:href => "#"} Delete 
-        .card_content 
-          = board.description        
+        .card_description 
+          = board.description 
+        .card_detail 
+          = image_tag 'Oval1.png'
+               
           
   = link_to new_board_path do
     .float_btn
