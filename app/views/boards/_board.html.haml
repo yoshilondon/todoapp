@@ -1,0 +1,19 @@
+= link_to board_path(board) do
+  .card
+    .card_content
+      %h2.card_title
+        = board.name
+      .card_content_actions       
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_board_path(board)
+            = link_to '削除する', board_path(board), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+    .card_description 
+      = board.description 
+    .card_detail 
+      = image_tag 'Oval1.png'
+      %div
+        %p= board.display_created_at
+      
+          
