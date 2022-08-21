@@ -19,6 +19,8 @@
           = board.description 
         .card_detail 
           = image_tag 'Oval1.png'
+          %div
+            %p= board.display_created_at
                
           
   = link_to new_board_path do
