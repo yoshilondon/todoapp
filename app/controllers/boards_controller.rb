@@ -6,7 +6,7 @@ class BoardsController < ApplicationController
 
   def show
   end
-  
+
   def new
     @board = current_user.boards.build
   end
@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to board_path(@board), notice: 'Saved'
     else
-      flash.now[:error] = 'Saving failed'
+      flash.now[:error] = 'Save failed'
       render :new
     end
   end
@@ -26,11 +26,11 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to board_path(@board), notice: 'Updated' 
+      redirect_to board_path(@board), notice: 'Updated'
     else
-      flash.now[:error] = 'Updating failed'
+      flash.now[:error] = 'Update failed'
       render :edit
-    end  
+    end
   end
 
   def destroy
