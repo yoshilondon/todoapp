@@ -20,6 +20,7 @@
 class Board < ApplicationRecord
   validates :name, presence: true
   validates :name, length: { minimum: 2, maximum: 30 }
+  validates :name, format: { with: /\A(?!\@)/ }
 
   validates :description, presence: true
   validates :description, length: { minimum: 30, maximum: 140 }
