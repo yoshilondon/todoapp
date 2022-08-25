@@ -22,7 +22,8 @@ class Board < ApplicationRecord
   validates :name, length: { minimum: 2, maximum: 30 }
 
   validates :description, presence: true
-  validates :description, length: {minimum: 30, maximum: 140 }
+  validates :description, length: { minimum: 30, maximum: 140 }
+  validates :description, uniqueness: true
 
   belongs_to :user
 
