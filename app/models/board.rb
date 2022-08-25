@@ -19,11 +19,24 @@
 #
 class Board < ApplicationRecord
   validates :name, presence: true
+  validates :name, length: { minimum: 2, maximum: 30 }
+  validates :name, format: { with: /\A(?!\@)/ }
+
   validates :description, presence: true
+  validates :description, length: { minimum: 30, maximum: 140 }
+  validates :description, uniqueness: true
+
+  validate :validate_name_and_description_length
 
   belongs_to :user
 
   def display_created_at
     I18n.l(self.created_at, format: :default)
+  end
+
+  private
+  def validate_name_and_description_length
+    char_count = self.name.length + self.description.length
+    errors.add(:content, 'more than 100 letters' ) unless char_count > 100
   end
 end
