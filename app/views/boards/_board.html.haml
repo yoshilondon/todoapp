@@ -3,7 +3,7 @@
     .card_content
       %h2.card_title
         = board.name
-      - if user_signed_in?
+      - if user_signed_in? && current_user.has_written?(board)
         .card_content_actions       
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
