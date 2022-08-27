@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_board, only: [:show]
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
@@ -24,9 +24,11 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    @board = current_user.boards.find(params[:id])
   end
 
   def update
+    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
       redirect_to board_path(@board), notice: 'Updated'
     else
@@ -46,7 +48,7 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:name, :description)
   end
 
-  def set_article
+  def set_board
     @board = Board.find(params[:id])
   end
 end

@@ -23,7 +23,7 @@ class Board < ApplicationRecord
   validates :name, format: { with: /\A(?!\@)/ }
 
   validates :description, presence: true
-  validates :description, length: { minimum: 30, maximum: 140 }
+  validates :description, length: { minimum: 1, maximum: 140 }
   validates :description, uniqueness: true
 
   validate :validate_name_and_description_length
@@ -37,6 +37,6 @@ class Board < ApplicationRecord
   private
   def validate_name_and_description_length
     char_count = self.name.length + self.description.length
-    errors.add(:content, 'more than 100 letters' ) unless char_count > 100
+    errors.add(:content, 'more than 3 letters' ) unless char_count > 3
   end
 end
