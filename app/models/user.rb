@@ -27,4 +27,7 @@ class User < ApplicationRecord
   def has_written?(board)
     boards.exists?(id: board.id)
   end
+
+  def avatar_image
+  end
 end
