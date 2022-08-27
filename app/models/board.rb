@@ -3,27 +3,21 @@
 # Table name: boards
 #
 #  id          :bigint           not null, primary key
-#  description :text
-#  name        :string
+#  description :text             not null
+#  name        :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  user_id     :bigint
+#  user_id     :bigint           not null
 #
 # Indexes
 #
 #  index_boards_on_user_id  (user_id)
 #
-# Foreign Keys
-#
-#  fk_rails_...  (user_id => users.id)
-#
 class Board < ApplicationRecord
   validates :name, presence: true
-  validates :name, length: { minimum: 2, maximum: 30 }
   validates :name, format: { with: /\A(?!\@)/ }
 
   validates :description, presence: true
-  validates :description, length: { minimum: 30, maximum: 140 }
   validates :description, uniqueness: true
 
   validate :validate_name_and_description_length
@@ -37,6 +31,6 @@ class Board < ApplicationRecord
   private
   def validate_name_and_description_length
     char_count = self.name.length + self.description.length
-    errors.add(:content, 'more than 100 letters' ) unless char_count > 100
+    errors.add(:content, 'more than 3 letters' ) unless char_count > 3
   end
 end
