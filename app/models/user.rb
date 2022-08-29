@@ -29,6 +29,14 @@ class User < ApplicationRecord
     boards.exists?(id: board.id)
   end
 
+  def display_name
+    self.email.split('@').first
+  end
+
+  def prepare_profile
+    profile || build_profile
+  end
+
   def avatar_image
   end
 end

@@ -38,16 +38,16 @@ $image_size: 56px;
       }
     }
 
-    // &_name {
-    //   display: flex;
-    //   margin-bottom: 8px;
-    // }
+    &_name {
+      display: flex;
+      margin-bottom: 8px;
+    }
 
-    // &_displayName {
-    //   font-size: 18px;
-    //   font-weight: bold;
-    //   margin-right: 8px;
-    // }
+    &_displayName {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
 
     &_introduction {
       font-size: 12px;
