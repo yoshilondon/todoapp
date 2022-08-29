@@ -30,7 +30,16 @@ class User < ApplicationRecord
   end
 
   def display_name
-    self.email.split('@').first
+    profile&.nickname || self.email.split('@').first
+    # ぼっち演算子(profileがnilじゃない場合だけnicknameを実行する)
+  end
+
+  def birthday
+    profile&.birthday
+  end
+
+  def gender
+    profilr&.gender
   end
 
   def prepare_profile
