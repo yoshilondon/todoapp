@@ -25,6 +25,8 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  delegate :birthday, :gender, to: :profile, allow_nil: true
+
   def has_written?(board)
     boards.exists?(id: board.id)
   end
@@ -32,14 +34,6 @@ class User < ApplicationRecord
   def display_name
     profile&.nickname || self.email.split('@').first
     # ぼっち演算子(profileがnilじゃない場合だけnicknameを実行する)
-  end
-
-  def birthday
-    profile&.birthday
-  end
-
-  def gender
-    profilr&.gender
   end
 
   def prepare_profile

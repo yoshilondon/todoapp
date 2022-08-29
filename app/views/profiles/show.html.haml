@@ -9,4 +9,5 @@
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
       .profilePage_user_introduction
-        yoyoyoyoshikiです。よろしく。
+        = current_user.profile&.introduction 
+        
