@@ -13,7 +13,7 @@
     .card_description 
       = board.description 
     .card_detail 
-      = image_tag 'Oval1.png'
+      = image_tag board.user.avatar_image
       %div
         %p= board.display_created_at
       
