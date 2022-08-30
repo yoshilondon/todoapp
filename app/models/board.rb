@@ -22,6 +22,7 @@ class Board < ApplicationRecord
 
   validate :validate_name_and_description_length
 
+  has_many :tasks, dependent: :destroy
   belongs_to :user
 
   def display_created_at
