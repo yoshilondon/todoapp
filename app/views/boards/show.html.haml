@@ -4,3 +4,8 @@
     .board_content
     = @board.description
 
+.container
+  = link_to new_board_task_path(@board) do
+    .float_btn
+      %i.fa.fa-plus Add new card
+   
