@@ -3,6 +3,10 @@
   .board
     .board_content
     = @board.description
+- @tasks.each do |task|
+  .board_task 
+    %h3= task.title
+    %p= task.content
 
 .container
   = link_to new_board_task_path(@board) do
