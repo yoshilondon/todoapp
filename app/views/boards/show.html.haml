@@ -7,6 +7,7 @@
   .board_task 
     %h3= task.title
     %p= task.content
+    %p= "Deadline: #{task.deadline}"
 
 .container
   = link_to new_board_task_path(@board) do
