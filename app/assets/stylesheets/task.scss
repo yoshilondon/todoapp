@@ -8,6 +8,19 @@ $container-padding: 16px;
   padding: $container-padding $container-padding;
   border-radius: 10px;
   position: relative;
+
+  &_content {
+    padding-top: 10px;
+    display: flex;
+    font-size: 12px;
+    position: relative;
+
+    &_actions {
+      padding-top: 8px;
+      right: 0px;
+      position: absolute;
+    }
+  }
 }
 
  h3 {

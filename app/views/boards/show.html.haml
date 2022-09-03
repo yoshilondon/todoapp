@@ -4,10 +4,14 @@
     .board_content
     = @board.description
 - @tasks.each do |task|
-  .board_task 
-    %h3= task.title
-    %p= task.content
-    %p= "Deadline: #{task.deadline}"
+  = link_to board_task_path(@board.id, task.id) do
+    .board_task 
+      - if task.eyecatch.attached?
+        .board_task_image 
+          = image_tag task.eyecatch
+      %h3= task.title
+      %p= task.content
+      %p= "Deadline: #{task.deadline}"
 
 .container
   = link_to new_board_task_path(@board) do
