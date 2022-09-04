@@ -14,3 +14,8 @@
         = image_tag @task.eyecatch
   .board_task
     %p.task_description= @task.content
+  
+.container 
+  = link_to new_board_task_comment_path(@task.board.id, @task.id) do
+    .float_btn_min
+      %i.fa.fa-plus Add new comment
