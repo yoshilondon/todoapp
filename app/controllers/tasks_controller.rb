@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit,]
+  before_action :set_task, only: [:show, :edit, :update]
 
   def show    
   end
@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     @task = board.tasks.build(task_params)
     @task.user_id = current_user.id
     if @task.save
-      redirect_to board_path(board), notice: 'add task'
+      redirect_to board_path(board), notice: 'task added'
     else
       flash.now[:error] = 'add task failed'
       render :new
@@ -22,6 +22,15 @@ class TasksController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @task.update(task_params)
+      redirect_to board_task_path(@task.board, @task), notice: 'task updated'
+    else
+      flash.now[:error] = 'update task failed'
+      render :edit
+    end
   end
 
   private
