@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show ]
+  before_action :set_task, only: [:show, :edit,]
 
   def show    
   end
@@ -19,6 +19,9 @@ class TasksController < ApplicationController
       flash.now[:error] = 'add task failed'
       render :new
     end
+  end
+
+  def edit
   end
 
   private
