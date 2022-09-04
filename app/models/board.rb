@@ -14,6 +14,7 @@
 #  index_boards_on_user_id  (user_id)
 #
 class Board < ApplicationRecord
+
   validates :name, presence: true
   validates :name, format: { with: /\A(?!\@)/ }
 
@@ -22,6 +23,7 @@ class Board < ApplicationRecord
 
   validate :validate_name_and_description_length
 
+  has_many :tasks, dependent: :destroy
   belongs_to :user
 
   def display_created_at
