@@ -18,6 +18,7 @@
 #
 class Task < ApplicationRecord
   has_one_attached :eyecatch
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true
   validates :content, presence: true
@@ -27,4 +28,9 @@ class Task < ApplicationRecord
   belongs_to :board
   
   belongs_to :user
+
+  def comment_count
+    comments.count
+  end
+
 end

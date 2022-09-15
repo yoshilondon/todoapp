@@ -7,6 +7,7 @@
 @import 'common';
 @import 'profile';
 @import 'task';
+@import 'comment';
 
 html {
   word-spacing: 1px;
@@ -76,5 +77,18 @@ h2.title {
 
   i {
     margin-top: 65px;
+  }
+}
+
+.float_btn_min {
+  height: 50px;
+  text-align: center;
+  background-color: #ffffff;
+  color: $text-base-color;
+  border: dashed 1px #000000;
+  border-radius: 10px;
+
+  i {
+    margin-top: 15px;
   }
 }

@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update]
 
-  def show    
+  def show 
+    @comments = @task.comments.includes(:user) 
   end
 
   def new
